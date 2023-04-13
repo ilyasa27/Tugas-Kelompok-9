@@ -62,7 +62,7 @@ class HeaderWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Hi, Selamat tinggal"),
+            const Text("Hy, Selamat tinggal"),
             Text(
               user.name,
               style: const TextStyle(
