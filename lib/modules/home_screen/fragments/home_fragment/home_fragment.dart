@@ -73,11 +73,11 @@ class _HomeFragmentState extends State<HomeFragment> {
                     child: HomeFragmentWidget.hotestNewsCard(
                       size,
                       "https://picsum.photos/1080/690",
-                      "Lebaran Sebentar Lagi",
+                      "Lebaran isukan",
                     ),
                   ),
                   const SizedBox(
-                    height: 16,
+                    height: 15,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
