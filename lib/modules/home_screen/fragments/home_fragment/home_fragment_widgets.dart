@@ -62,7 +62,7 @@ class HeaderWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Hy, Selamat tinggal"),
+            const Text("Hi, Selamat datang"),
             Text(
               user.name,
               style: const TextStyle(
@@ -247,7 +247,7 @@ class LatestNewsCard extends StatelessWidget {
                     child: AspectRatio(
                       aspectRatio: 1 / 1,
                       child: Image.network(
-                        "https://picsum.photos/200",
+                        "https://id-test-11.slatic.net/p/397f02b906ae5290587b755ec33f30b2.png",
                       ),
                     ),
                   ),
@@ -256,7 +256,80 @@ class LatestNewsCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "${i + 1}. Laboris fugiat eiusmod consequat aliqua eiusmod.",
+                      "${i}. Thinkpad T470 adalah laptop yang sangat banyak diminati",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+      ],
+    );
+  }
+}
+
+class LatestNewsCard1 extends StatelessWidget {
+  const LatestNewsCard1({
+    super.key,
+    required this.size,
+    required this.i,
+  });
+
+  final Size size;
+  final int i;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              8,
+            ),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                spreadRadius: 1,
+                color: Colors.black12,
+              ),
+            ],
+          ),
+          child: InkWell(
+            onTap: () {
+              GoRouter.of(context).goNamed(
+                AppRoutes.newsDetail,
+                params: {
+                  "id": i.toString(),
+                },
+              );
+            },
+            child: Row(
+              children: [
+                SizedBox(
+                  width: size.width * 0.25,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      bottomLeft: Radius.circular(8),
+                    ),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: Image.network(
+                        "https://www.lenovo.com/medias/lenovo-laptop-thinkpad-t480-feature-03.jpg?context=bWFzdGVyfHJvb3R8NDk0OTN8aW1hZ2UvanBlZ3xoNDkvaDJiLzk2MTA3MDg3NzkwMzguanBnfDE5NzE4YzViY2MzMzYwMTExNmIwOTIxMjExYzYzMzViYjExNzlkMDk2N2ZhNGQ3ZjlkYjE1NzBlNTJhNzQyYmI",
+                      ),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "${i}. Thinkpad T480 adalah laptop yang sangat banyak diminati",
                     ),
                   ),
                 ),
@@ -285,11 +358,8 @@ class LatestNewsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        for (int i = 0; i < 10; i++)
-          LatestNewsCard(
-            size: size,
-            i: i,
-          ),
+        LatestNewsCard(size: size, i: 1),
+        LatestNewsCard1(size: size, i: 2)
       ],
     );
   }
